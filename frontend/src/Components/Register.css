@@ -37,17 +37,14 @@ button {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #199e7b;
+  background: #1cbe93;
   color: #ffffff;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
-button:hover, button:focus {
-  background: #1cbe93;
-}
 
-.button-block1:hover, .button-block1:focus {
-  background: #808080;
+button:hover, button:focus {
+  background: #199e7b;
 }
 
 .button-block1 {
@@ -61,11 +58,15 @@ button:hover, button:focus {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #4d4d4d;
+  background: #4d4d4de0;
   color: #ffffff;
   transition: all 0.5s ease;
   -webkit-appearance: none;
   text-align: center;
+}
+
+.button-block1:hover, .button-block1:focus {
+  background: #808080;
 }
 
 .button-block2 {

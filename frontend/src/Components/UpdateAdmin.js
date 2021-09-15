@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {BrowserRouter as Router} from "react-router-dom";
+import AdminPanel from "./AdminPanel";
 import './Styles.css';
 import './Register.css';
 import './Tables.css';
@@ -87,6 +89,11 @@ class UpdateAdmin extends React.Component{
 
     render(){
         return(
+            <div>
+            <Router>
+                <AdminPanel/>
+            </Router>
+            <br/><br/><br/>
             <div className="container3">
                 <h1>Update Admin Data</h1>
                 <br/>
@@ -110,7 +117,7 @@ class UpdateAdmin extends React.Component{
                 <br/>
                 <div class="row">
                     <div class="col">
-                        <a className="button button-block1" href="/" style={{textDecoration:'none'}}>
+                        <a className="button button-block1" href="/home" style={{textDecoration:'none'}}>
                             <i style={{textDecoration:'none'}}></i>BACK
                         </a> 
                     </div>
@@ -119,6 +126,7 @@ class UpdateAdmin extends React.Component{
                     </div>
                 </div>
                 </form>
+            </div>
             </div>
         )
     }

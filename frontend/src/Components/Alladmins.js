@@ -40,6 +40,7 @@ class Alladmins extends React.Component{
     render(){
         return(
             <div className="container">
+                <br/><br/><br/>
                     <table className="table1">
                         <thead className="thead1">
                             <th className="th1">ADMIN MANAGEMENT</th>
@@ -81,7 +82,7 @@ class Alladmins extends React.Component{
                                                 <i className="fas fa-edit"></i>&nbsp;EDIT
                                             </a>
                                             &nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a className="btn btn-danger" href="." onClick={()=>this.onDelete(admins._id)}>
+                                            <a className="btn btn-danger" href="/home" onClick={()=>this.onDelete(admins._id)}>
                                                 <i className="fas fa-trash-alt"></i>&nbsp;DELETE
                                             </a>
                                         </th>

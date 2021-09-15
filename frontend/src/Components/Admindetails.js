@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import {BrowserRouter as Router} from "react-router-dom";
+import AdminPanel from "./AdminPanel";
 import './Styles.css';
 import './Tables.css';
 
@@ -27,6 +29,11 @@ class Admindetails extends React.Component{
     render(){
         const {adminID,username,email,Password} = this.state.admins;
         return(
+            <div>
+            <Router>
+                <AdminPanel/>
+            </Router>
+            <br/><br/><br/>
             <div className="container">
                 <table className="table1">
                         <thead className="thead1">
@@ -68,10 +75,11 @@ class Admindetails extends React.Component{
                         </div>
                     </div>
                     <br/>
-                    <a className="btn btn-success" href="/">
+                    <a className="btn btn-success" href="/home">
                         <i className="fas fa-arrow-left"></i>&nbsp;BACK
                     </a>
                 </form>   
+            </div>
             </div>
         )
     }

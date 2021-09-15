@@ -7,7 +7,7 @@ export default class AdminPanel extends Component {
         return (
             <div>
             {/* top navigation bar */}
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top pt-2 pb-2">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top pt-1 pb-1">
             <div class="container-fluid">
                 {/* <!-- offcanvas trigger --> */}
                 <button
@@ -47,7 +47,7 @@ export default class AdminPanel extends Component {
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle ms-2" href="." role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle"></i>
+                        <i class="bi bi-person-circle bi-10x"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href=".">Action</a></li>
@@ -76,7 +76,7 @@ export default class AdminPanel extends Component {
                     <div class="text-muted small fw-bold text-uppercase px-3">CORE</div>
                     </li>
                     <li>
-                    <a href="." class="nav-link px-3 active">
+                    <a href="/" class="nav-link px-3 active">
                         <span class="me-2">
                         <i class="bi bi-speedometer2"></i>
                         </span>
@@ -92,7 +92,7 @@ export default class AdminPanel extends Component {
                     <li>
                     <div class="d-grid gap-3 col-11 mx-auto">
                         <button type="button" class="button1 btn btn-light">Customer Management</button>
-                        <a href="/" style={{textDecoration:'none'}}>
+                        <a href="/home" style={{textDecoration:'none'}}>
                             <button type="button" class="button1 btn btn-light">Admin Management</button>
                         </a>
                         <button type="button" class="button1 btn btn-light">Stock Management</button>
@@ -109,13 +109,13 @@ export default class AdminPanel extends Component {
                     </div>
                     </li>
                     <li>
-                    <a href="." class="nav-link px-3">
+                    <a href="/" class="nav-link px-3">
                         <span class="me-2"><i class="bi bi-graph-up"></i></span>
                         <span>Charts</span>
                     </a>
                     </li>
                     <li>
-                    <a href="." class="nav-link px-3">
+                    <a href="/" class="nav-link px-3">
                         <span class="me-2"><i class="bi bi-table"></i></span>
                         <span>Tables</span>
                     </a>
