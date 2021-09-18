@@ -7,12 +7,14 @@ import UpdateAdmin from './Components/UpdateAdmin';
 import Footer from './Components/Footer';
 import WelcomeToAdmin from './Components/WelcomeToAdmin';
 import AdminPanel from './Components/AdminPanel';
+import AdminLogin from './Components/AdminLogin';
 
 function App() {
   return (
     <Router>
       <div>
         <Route path="/" exact component={WelcomeToAdmin}/>
+        <Route path="/login" exact component={AdminLogin}/>
         <Route path="/home" exact component={AdminPanel}/>
         <Route path="/home" exact component={Alladmins}/>
         <Route path="/add" exact component={CreateAdmin}/>

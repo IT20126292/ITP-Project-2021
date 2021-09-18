@@ -1,5 +1,7 @@
 const router = require("express").Router();
 let admin = require("../Models/admin.js");
+const jwt = require("jsonwebtoken");
+const auth = require("../frontend/src/Components/auth");
 
 //CREATE FUNCTION 1
 router.route("/add").post((req,res)=>{
@@ -37,6 +39,40 @@ router.post('/post/save',(req,res)=>{
             success:"Posts Saved Successfully"
         });
     });
+});
+
+//CREATE FUNCTION 3
+router.post("/newAdd", async (req, res) => {
+    try {
+      const {adminID,username,email,Password,Password1} = req.body;
+
+      let pos = await admin.findOne({ email })
+
+        if (pos) {
+            throw new Error("User already exists");
+        }
+        pos = {
+            adminID:adminID,
+            username:username,
+            email:email,
+            Password:Password,
+            Password1:Password1
+        };
+
+      const newAdmin = new admin(pos);
+      await newAdmin.save();
+      const token = await newAdmin.generateAuthToken();
+      res
+        .status(201)
+        .send({ status:"posts Created", admin: newAdmin, token: token });
+
+    }catch (error) {
+
+      console.log(error.message);
+
+      res.status(500).send({error: error.message});
+
+    }
 });
 
 //RETRIEV FUNCTION 1
@@ -127,6 +163,7 @@ router.delete('/post/delete/:id',(req,res)=>{
     });
 });
 
+//SEARCH FUNCTION 1
 router.route("/get/:id").get(async(req,res)=>{
     let adminId = req.params.id;
     const Admin = await admin.findById(adminId).then((Admin)=>{
@@ -137,6 +174,7 @@ router.route("/get/:id").get(async(req,res)=>{
     })
 })
 
+//SEARCH FUNCTION 2
 router.get('/posts/:id',(req,res)=>{
     let getid = req.params.id;
 
@@ -151,6 +189,19 @@ router.get('/posts/:id',(req,res)=>{
             search
         })
     });
+});
+
+//LOGIN FUNCTION
+router.post('/post/login', async (req, res) => {
+    try {
+      const {email, Password} = req.body
+      const pos = await admin.findByCredentials(email, Password)
+      const token = await pos.generateAuthToken()
+      res.status(200).send({token: token, pos: pos});
+    } catch (error) {
+      res.status(500).send({ error: error.message });
+      console.log(error);
+    }
 });
 
 module.exports = router;

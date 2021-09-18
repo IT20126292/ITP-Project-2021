@@ -27,7 +27,7 @@ class Admindetails extends React.Component{
     }
 
     render(){
-        const {adminID,username,email,Password} = this.state.admins;
+        const {adminID,username,email,Password1} = this.state.admins;
         return(
             <div>
             <Router>
@@ -62,7 +62,7 @@ class Admindetails extends React.Component{
                     <div class="row mb-2">
                         <label for="inputPassword3" className="col-sm-0 col-form-label">Password</label>
                         <div class="col-sm-4">
-                        <input type="password" className="form-control" id="inputPassword3" value={Password} readOnly/>
+                        <input type="text" className="form-control" id="inputPassword3" value={Password1} readOnly/>
                         {/* <span className="eye">
                             <i id="hide1" class="far fa-eye"></i>
                             <i id="hide2" class="far fa-eye-slash"></i>

@@ -14,13 +14,15 @@ class CreateAdmin extends React.Component{
         this.setAdminUsername = this.setAdminUsername.bind(this)
         this.setAdminEmail = this.setAdminEmail.bind(this)
         this.setAdminPwd = this.setAdminPwd.bind(this)
+        this.setAdminPwd1 = this.setAdminPwd1.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this)
         this.saveAdmindata = this.saveAdmindata.bind(this)
         this.state = {
             adminID: '',
             username: '',
             email: '',
-            Password: ''
+            Password: '',
+            Password1: ''
         }
     }
     setAdminID(e){
@@ -44,6 +46,11 @@ class CreateAdmin extends React.Component{
             Password:e.target.value
         });
     }
+    setAdminPwd1(e){
+        this.setState({
+            Password1:e.target.value
+        });
+    }
     handleInputChange(Event){
         const {name,value} = Event.target;
 
@@ -59,20 +66,26 @@ class CreateAdmin extends React.Component{
             adminID: this.state.adminID,
             username: this.state.username,
             email: this.state.email,
-            Password: this.state.Password
+            Password: this.state.Password,
+            Password1: this.state.Password1
         }
-        axios.post('http://localhost:8070/admins/add',Admin).then(()=>{
-            // alert("New Admin Data successfully inserted");
-            toast.success('New Admin Data successfully inserted',{position:toast.POSITION.TOP_CENTER})
-            this.setState({
-                adminID: '',
-                username: '',
-                email: '',
-                Password: ''
-            })
-        }).catch(error=>{
-            alert(error.message);
-        });
+        if(this.state.Password === this.state.Password1){
+            axios.post('http://localhost:8070/admins/newAdd',Admin).then(()=>{
+                // alert("New Admin Data successfully inserted");
+                toast.success('New Admin Data successfully inserted',{position:toast.POSITION.TOP_CENTER})
+                this.setState({
+                    adminID: '',
+                    username: '',
+                    email: '',
+                    Password: '',
+                    Password1: ''
+                })
+            }).catch(error=>{
+                alert(error.message);
+            });
+        }else{
+            toast.warning('Password Dismatch',{position:toast.POSITION.TOP_CENTER})
+        }
     }
 
     render(){
@@ -98,10 +111,9 @@ class CreateAdmin extends React.Component{
                 <div class="mb-3">
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="NEW PASSWORD" value={this.state.Password} onChange={this.setAdminPwd}/>
                 </div>
-                {/* <div class="mb-3">
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="CONFIRM PASSWORD"/>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="CONFIRM PASSWORD" value={this.state.Password1} onChange={this.setAdminPwd1}/>
                 </div>
-                <br/> */}
                 <br/>
                 <div class="row">
                     <div class="col">

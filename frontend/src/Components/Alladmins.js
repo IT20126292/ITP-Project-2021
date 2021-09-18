@@ -39,57 +39,85 @@ class Alladmins extends React.Component{
 
     render(){
         return(
-            <div className="container">
-                <br/><br/><br/>
-                    <table className="table1">
-                        <thead className="thead1">
-                            <th className="th1">ADMIN MANAGEMENT</th>
-                            <th className="th2">
-                                <a name="report" id="reportGen" class="btn btn-primary" href="." role="button">
-                                    <b>REPORT</b>
-                                </a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a name="addAdmin" id="addAdmin" class="btn btn-primary" href="/add" role="button">
-                                    <b>ADD ADMIN</b>
-                                </a>
-                            </th>
-                        </thead>
-                    </table>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <table>
-                            <thead>
-                                <th scope="col">#</th>    
-                                <th scope="col">ID</th>
-                                <th scope="col">USERNAME</th>
-                                <th scope="col">EMAIL</th>
-                                <th scope="col">PASSWORD</th>
-                                <th scope="col">ACTION</th>
-                            </thead>
-                            <tbody>
-                                {this.state.admins.map((admins,index)=>(
-                                    <tr>
-                                        <th scope="row">{index+1}</th>
-                                        <th>{admins.adminID}</th>
-                                        <th>{admins.username}</th>
-                                        <th>{admins.email}</th>
-                                        <th>{admins.Password}</th>
-                                        <th>
-                                            <a className="btn btn-secondary" href={`/posts/${admins._id}`}>
-                                                <i className="fas fa-eye"></i>&nbsp;VIEW
-                                            </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a className="btn btn-warning" href={`/edit/${admins._id}`}>
-                                                <i className="fas fa-edit"></i>&nbsp;EDIT
-                                            </a>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a className="btn btn-danger" href="/home" onClick={()=>this.onDelete(admins._id)}>
-                                                <i className="fas fa-trash-alt"></i>&nbsp;DELETE
-                                            </a>
-                                        </th>
-                                    </tr>
-                                ))}
-                            </tbody>
-                    </table>
+            <div className="scroll-bg">
+                <div className="scroll-div">
+                    <div className="scroll-object">
+                    <div className="container">
+                        <br/><br/><br/>
+                            <table className="table1">
+                                <thead className="thead1">
+                                    <th className="th1">ADMIN MANAGEMENT</th>
+                                    <th className="th3">
+                                        <a name="report" id="reportGen" class="btn btn-primary" href="." role="button">
+                                            <b>REPORT</b>
+                                        </a>
+                                    </th>
+                                    <th className="th2">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a name="addAdmin" id="addAdmin" class="btn btn-primary" href="/add" role="button">
+                                            <b>ADD ADMIN</b>
+                                        </a>
+                                    </th>
+                                </thead>
+                            </table>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <table className="table">
+                                    <thead>
+                                        <th scope="col" className="Th1">#</th>    
+                                        <th scope="col" className="Th2">ID</th>
+                                        <th scope="col" className="Th3">USERNAME</th>
+                                        <th scope="col" className="Th4">EMAIL</th>
+                                        <th scope="col" className="resizeWidth">PASSWORD</th>
+                                        <th scope="col" className="Th5">ACTION</th>
+                                    </thead>
+                                    <tbody>
+                                        {this.state.admins.map((admins,index)=>(
+                                            <tr>
+                                                <th scope="row">{index+1}</th>
+                                                <th>{admins.adminID}</th>
+                                                <th>{admins.username}</th>
+                                                <th>{admins.email}</th>
+                                                <th>
+                                                    <div>
+                                                        <input type="password" className="removeStyles" value={admins.Password1} readOnly/>
+                                                        {/* <i className="far fa-eye password-icon"/> */}
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="container">
+                                                        <div class="row row-cols-auto row1">
+                                                            <div class="col-2">
+                                                                <a className="btn btn-secondary" href={`/posts/${admins._id}`}>
+                                                                    <i className="fa fa-eye"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div className="col-0">
+                                                                <div className="vl"></div>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <a className="btn btn-warning" href={`/edit/${admins._id}`}>
+                                                                    <i className="fas fa-edit"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div className="col-0">
+                                                                <div class="vl"></div>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <a className="btn btn-danger" href="/home" onClick={()=>this.onDelete(admins._id)}>
+                                                                    <i className="fas fa-trash-alt"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                            </table>
+                            <br/><br/><br/>
+                    </div>
+                    </div>
+                </div>
             </div>
         )
     }

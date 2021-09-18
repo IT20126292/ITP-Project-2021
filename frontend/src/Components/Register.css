@@ -74,6 +74,28 @@ button:hover, button:focus {
   width: 100%;
 }
 
+.button-block4{
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: none;
+  border-radius: 4px;
+  padding: 15px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #4d4d4de0;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  text-align: center;
+}
+
+.button-block4:hover, .button-block4:focus {
+  background: #808080;
+}
+
 h1 {
   text-align: center;
   color: #1b1b1b;

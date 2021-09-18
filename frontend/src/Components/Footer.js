@@ -9,7 +9,6 @@ export default class Footer extends Component {
                     <div className="container text-center text-md-left">
                         <div className="row text-center text-md-left">
                             <div className="col-md-3 col-lg-3 col-xl-8 mx-auto mt-3">
-                                {/* <h5 className="text-uppercase mb-4 font-weight-bold text-success">REMEDI</h5> */}
                                 <p className="footerpara"><b>Copyright © 2021 | All Rights Reserved | Healthymart Pharmacy</b></p>
                             </div>
                         </div>

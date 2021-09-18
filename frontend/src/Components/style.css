@@ -68,8 +68,9 @@ img{
 
 footer{
   background-color: rgb(238, 238, 238);
+  margin-top: 7%;
 }
 
 .footerpara{
-  font-size: 13px;
+  font-size: 12px;
 }

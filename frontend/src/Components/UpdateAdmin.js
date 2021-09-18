@@ -22,7 +22,7 @@ class UpdateAdmin extends React.Component{
             adminID: '',
             username: '',
             email: '',
-            Password: ''
+            Password1: ''
         }
     }
     setAdminID(e){
@@ -43,7 +43,7 @@ class UpdateAdmin extends React.Component{
     }
     setAdminPwd(e){
         this.setState({
-            Password:e.target.value
+            Password1:e.target.value
         });
     }
     handleInputChange(Event){
@@ -62,7 +62,7 @@ class UpdateAdmin extends React.Component{
             adminID: this.state.adminID,
             username: this.state.username,
             email: this.state.email,
-            Password: this.state.Password
+            Password1: this.state.Password1
         }
         axios.put(`http://localhost:8070/admins/update/${id}`,Admin).then(()=>{
             // alert("Admin Data Updated successfully");
@@ -80,7 +80,7 @@ class UpdateAdmin extends React.Component{
                     adminID: res.data.search.adminID,
                     username: res.data.search.username,
                     email: res.data.search.email,
-                    Password: res.data.search.Password
+                    Password1: res.data.search.Password1
                 });
                 // console.log(this.state.search);
             }
@@ -108,7 +108,7 @@ class UpdateAdmin extends React.Component{
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value={this.state.email} onChange={this.setAdminEmail}/>
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="NEW PASSWORD" value={this.state.Password} onChange={this.setAdminPwd}/>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="NEW PASSWORD" value={this.state.Password1} onChange={this.setAdminPwd}/>
                 </div>
                 {/* <div class="mb-3">
                     <input type="password" class="form-control" id="exampleInputPassword2" placeholder="CONFIRM PASSWORD"/>
