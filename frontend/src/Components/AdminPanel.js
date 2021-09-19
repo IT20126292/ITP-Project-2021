@@ -44,28 +44,18 @@ export default class AdminPanel extends Component {
                         </div>
                     </form>
 
-                    <ul className="navbar-nav mb-2 mb-lg-0">
+                    <ul className="navbar-nav mb-1 mb-lg-0">
                         <li className="nav-item dropdown" key="dropdown">
                             <a className="nav-link dropdown-toggle ms-2" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="bi bi-person-circle bi-10x"></i>
                             </a>
-                            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="/">Action</a></li>
-                                <li><a className="dropdown-item" href="/">Another action</a></li>
+                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                <li><a className="dropdown-item" href="/home">Profile</a></li>
+                                <li><a className="dropdown-item" href="/login">Logout</a></li>
                                 <li><a className="dropdown-item" href="/">Something else here</a></li>
                             </ul>
                         </li>
                     </ul>
-                    {/* <div class="select">
-                        <select name="format" id="format">
-                            <option selected disabled>Choose a book format</option>
-                            <option value="pdf">PDF</option>
-                            <option value="txt">txt</option>
-                            <option value="epub">ePub</option>
-                            <option value="fb2">fb2</option>
-                            <option value="mobi">mobi</option>
-                        </select>
-                    </div> */}
                 </div>
             </div>
             </nav>

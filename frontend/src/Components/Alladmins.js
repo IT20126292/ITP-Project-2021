@@ -49,13 +49,17 @@ class Alladmins extends React.Component{
                                     <th className="th1">ADMIN MANAGEMENT</th>
                                     <th className="th3">
                                         <a name="report" id="reportGen" class="btn btn-primary" href="." role="button">
-                                            <b>REPORT</b>
+                                            <i class="fas fa-file-download"></i>&nbsp;
+                                            <i style={{textDecoration:'none'}}></i>REPORTS
+                                            {/* <b>REPORTS</b> */}
                                         </a>
                                     </th>
                                     <th className="th2">
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <a name="addAdmin" id="addAdmin" class="btn btn-primary" href="/add" role="button">
-                                            <b>ADD ADMIN</b>
+                                            <i class="fas fa-user-plus"></i>&nbsp;
+                                            <i style={{textDecoration:'none'}}></i>ADD ADMIN
+                                            {/* <b>ADD ADMIN</b> */}
                                         </a>
                                     </th>
                                 </thead>
