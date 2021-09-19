@@ -66,7 +66,7 @@ function WelcomeToAdmin() {
                     <i style={{textDecoration:'none'}}></i>Continue
                 </a> */}
                 <div className="ButtonDivContainer">
-                    <button type="submit" className="continueButton" onClick={()=>{history.push('/home')}}>Continue</button>
+                    <button type="submit" className="continueButton" onClick={()=>{history.push('/login')}}>Continue</button>
                 </div>   
             </div>
             {/* <!-- container --> */}

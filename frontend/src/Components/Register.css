@@ -85,7 +85,7 @@ button:hover, button:focus {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #4d4d4de0;
+  background: #1cbe93;
   color: #ffffff;
   transition: all 0.5s ease;
   -webkit-appearance: none;
@@ -93,7 +93,7 @@ button:hover, button:focus {
 }
 
 .button-block4:hover, .button-block4:focus {
-  background: #808080;
+  background: #199e7b;
 }
 
 h1 {
@@ -101,4 +101,15 @@ h1 {
   color: #1b1b1b;
   font-weight: 500;
   margin: 0 0 20px;
+}
+
+.LoginContainer{
+  background: rgba(226, 226, 226, 0.9);
+  position: relative;
+  padding: 40px;
+  max-width: 550px;
+  height: 400px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }

@@ -56,7 +56,7 @@ AdminSchema.methods.generateAuthToken = async function () {
 
 AdminSchema.statics.findByCredentials = async (email, Password) => {
 
-    const pos = await posts.findOne({ email });
+    const pos = await Admin.findOne({ email });
     if (!pos){
       throw new Error("Please enter authorized email");
     }

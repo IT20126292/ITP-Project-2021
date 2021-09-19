@@ -3,6 +3,8 @@ import axios from "axios";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Register.css';
+import {BrowserRouter as Router} from "react-router-dom";
+import RemediNavbar from "./RemediNavbar";
 
 toast.configure()
 export default class AdminLogin extends Component {
@@ -42,7 +44,7 @@ export default class AdminLogin extends Component {
             this.setState({open: true})
             toast.error('Invalid Email or Password',{position:toast.POSITION.TOP_CENTER})
         })
-    };
+    }
 
     handleClose(reason) {
         if (reason === 'clickaway') {
@@ -54,21 +56,24 @@ export default class AdminLogin extends Component {
     render() {
         return (
             <div>
-            <br/><br/><br/>
-            <div className="container2">
+            <Router>
+                <RemediNavbar/>
+            </Router>
+            <br/><br/><br/><br/><br/>
+            <div className="LoginContainer">
                 <h1>Admin Login</h1>
                 <br/>
                 <form>
-                <div class="mb-3">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" onChange={e => this.setState({email: e.target.value})}/>
+                <div class="mb-4">
+                    <input type="email" class="form-control" id="email" placeholder="EMAIL" onChange={e => this.setState({email: e.target.value})}/>
                 </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="PASSWORD" onChange={e => this.setState({Password: e.target.value})}/>
+                <div class="mb-4">
+                    <input type="password" class="form-control" id="Password" placeholder="PASSWORD" onChange={e => this.setState({Password: e.target.value})}/>
                 </div>
                 <br/>
                 <div class="row">
                     <div class="col">
-                        <button type="submit" class="button button-block4">SignIn</button>
+                        <button type="submit" class="button button-block4" onClick={this.userLoginSubmit}>SignIn</button>
                     </div>
                 </div>
                 </form>

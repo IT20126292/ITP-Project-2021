@@ -35,29 +35,37 @@ export default class AdminPanel extends Component {
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="topNavBar">
-                <form class="d-flex ms-auto">
-                    <div class="input-group my-3 my-lg-0" >
-                    <input type="search" class="form-control" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-primary" type="submit" id="button-addon2">
-                        <i class="bi bi-search"></i>
-                    </button>
-                    </div>
-                </form>
+                    <form class="d-flex ms-auto">
+                        <div class="input-group my-3 my-lg-0" >
+                        <input type="search" class="form-control" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-primary" type="submit" id="button-addon2">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        </div>
+                    </form>
 
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ms-2" href="." role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle bi-10x"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href=".">Action</a></li>
-                        <li><a class="dropdown-item" href=".">Another action</a></li>
-                        <li>
-                        <a class="dropdown-item" href=".">Something else here</a>
+                    <ul className="navbar-nav mb-2 mb-lg-0">
+                        <li className="nav-item dropdown" key="dropdown">
+                            <a className="nav-link dropdown-toggle ms-2" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="bi bi-person-circle bi-10x"></i>
+                            </a>
+                            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a className="dropdown-item" href="/">Action</a></li>
+                                <li><a className="dropdown-item" href="/">Another action</a></li>
+                                <li><a className="dropdown-item" href="/">Something else here</a></li>
+                            </ul>
                         </li>
                     </ul>
-                    </li>
-                </ul>
+                    {/* <div class="select">
+                        <select name="format" id="format">
+                            <option selected disabled>Choose a book format</option>
+                            <option value="pdf">PDF</option>
+                            <option value="txt">txt</option>
+                            <option value="epub">ePub</option>
+                            <option value="fb2">fb2</option>
+                            <option value="mobi">mobi</option>
+                        </select>
+                    </div> */}
                 </div>
             </div>
             </nav>

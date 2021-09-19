@@ -110,7 +110,7 @@ router.route("/update/:id").put(async(req,res)=>{
         Password
     }
     const update = await admin.findByIdAndUpdate(adminId, updateAdmin).then(()=>{
-        res.status(200).send({status:"Admin Updated"})
+        res.status(200).send({status:"Admin Updated", update: update})
     }).catch((err)=>{
         console.log(err);
         res.status(500).send({status:"Error Generated in the Admin updated part", error: err.message});
