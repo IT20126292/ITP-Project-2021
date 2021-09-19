@@ -37,6 +37,25 @@ class Alladmins extends React.Component{
         })
     }
 
+    filterData(admins,searchKey){
+        const result = admins.filter((admin)=>
+            admin.username.toLowerCase().includes(searchKey)||admin.email.toLowerCase().includes(searchKey)||
+            admin.adminID.toLowerCase().includes(searchKey)
+        )
+        this.setState({admins:result})
+    }
+
+    handleSearchArea=(e)=>{
+        const searchKey = e.currentTarget.value;
+
+        axios.get('http://localhost:8070/admins/posts').then(res=>{
+            if(res.data.success){
+                this.filterData(res.data.existingAdmins,searchKey)   
+            }
+        })
+        console.log(e.currentTarget.value);
+    }
+
     render(){
         return(
             <div className="scroll-bg">
@@ -47,14 +66,19 @@ class Alladmins extends React.Component{
                             <table className="table1">
                                 <thead className="thead1">
                                     <th className="th1">ADMIN MANAGEMENT</th>
-                                    <th className="th3">
+                                    {/* <th className="th3">
+                                        <a name="report" id="reportGen" class="btn btn-primary" href="." role="button">
+                                            <i class="fas fa-file-download"></i>&nbsp;
+                                            <i style={{textDecoration:'none'}}></i>REPORTS
+                                            <b>REPORTS</b>
+                                        </a>
+                                    </th> */}
+                                    <th className="th2">
                                         <a name="report" id="reportGen" class="btn btn-primary" href="." role="button">
                                             <i class="fas fa-file-download"></i>&nbsp;
                                             <i style={{textDecoration:'none'}}></i>REPORTS
                                             {/* <b>REPORTS</b> */}
                                         </a>
-                                    </th>
-                                    <th className="th2">
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <a name="addAdmin" id="addAdmin" class="btn btn-primary" href="/add" role="button">
                                             <i class="fas fa-user-plus"></i>&nbsp;
@@ -65,6 +89,9 @@ class Alladmins extends React.Component{
                                 </thead>
                             </table>
                             &nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="search-box mb-2">
+                                <input type="search" class="search-txt" placeholder="Type To Search..." aria-label="Search" aria-describedby="basic-addon1" onChange={this.handleSearchArea}/>
+                            </div>
                             <table className="table">
                                     <thead>
                                         <th scope="col" className="Th1">#</th>    
