@@ -52,7 +52,7 @@ export default class AdminPanel extends Component {
                             <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
                                 <li><a className="dropdown-item" href="/home">Profile</a></li>
                                 <li><a className="dropdown-item" href="/login">Logout</a></li>
-                                <li><a className="dropdown-item" href="/">Something else here</a></li>
+                                <li><a className="dropdown-item" href="/">Welcome</a></li>
                             </ul>
                         </li>
                     </ul>

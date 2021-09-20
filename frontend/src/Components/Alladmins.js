@@ -40,7 +40,7 @@ class Alladmins extends React.Component{
     filterData(admins,searchKey){
         const result = admins.filter((admin)=>
             admin.username.toLowerCase().includes(searchKey)||admin.email.toLowerCase().includes(searchKey)||
-            admin.adminID.toLowerCase().includes(searchKey)
+            admin.adminID.includes(searchKey)
         )
         this.setState({admins:result})
     }
