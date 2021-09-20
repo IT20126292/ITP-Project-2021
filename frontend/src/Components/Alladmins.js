@@ -66,24 +66,15 @@ class Alladmins extends React.Component{
                             <table className="table1">
                                 <thead className="thead1">
                                     <th className="th1">ADMIN MANAGEMENT</th>
-                                    {/* <th className="th3">
-                                        <a name="report" id="reportGen" class="btn btn-primary" href="." role="button">
-                                            <i class="fas fa-file-download"></i>&nbsp;
-                                            <i style={{textDecoration:'none'}}></i>REPORTS
-                                            <b>REPORTS</b>
-                                        </a>
-                                    </th> */}
                                     <th className="th2">
                                         <a name="report" id="reportGen" class="btn btn-primary" href="." role="button">
                                             <i class="fas fa-file-download"></i>&nbsp;
                                             <i style={{textDecoration:'none'}}></i>REPORTS
-                                            {/* <b>REPORTS</b> */}
                                         </a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <a name="addAdmin" id="addAdmin" class="btn btn-primary" href="/add" role="button">
                                             <i class="fas fa-user-plus"></i>&nbsp;
                                             <i style={{textDecoration:'none'}}></i>ADD ADMIN
-                                            {/* <b>ADD ADMIN</b> */}
                                         </a>
                                     </th>
                                 </thead>
@@ -91,6 +82,9 @@ class Alladmins extends React.Component{
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <div class="search-box mb-2">
                                 <input type="search" class="search-txt" placeholder="Type To Search..." aria-label="Search" aria-describedby="basic-addon1" onChange={this.handleSearchArea}/>
+                                <label className="searchDesign">
+                                    <i class="fas fa-search"></i>
+                                </label>
                             </div>
                             <table className="table">
                                     <thead>

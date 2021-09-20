@@ -123,7 +123,7 @@ table thead {
     height: 45px;
     max-width: 50%;
     background: rgb(255, 255, 255);
-    border: 2px solid rgb(19, 204, 158);
+    border: 2px solid rgb(37, 37, 37);
     padding: 10px;
     border-radius: 50px;
 }
@@ -141,8 +141,25 @@ table thead {
     height: 80%;
     padding: 10px;
     font-size: 15px;
-    color: rgb(36, 36, 36);
+    color: rgb(39, 39, 39);
     font-weight: 600;
     transition: 0.6s;
     line-height: 40px;
+}
+
+.fa-search{
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+
+.searchDesign{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    color: rgb(39, 39, 39);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(15, 226, 181);
 }

@@ -102,15 +102,15 @@ router.get('/posts',(req,res)=>{
 //UPDATE FUNCTION 1
 router.route("/update/:id").put(async(req,res)=>{
     let adminId = req.params.id;
-    const {adminID,username,email,Password} = req.body;
+    const {adminID,username,email,Password1} = req.body;
     const updateAdmin = {
         adminID,
         username,
         email,
-        Password
+        Password1
     }
     const update = await admin.findByIdAndUpdate(adminId, updateAdmin).then(()=>{
-        res.status(200).send({status:"Admin Updated", update: update})
+        res.status(200).send({status:"Admin Updated"});
     }).catch((err)=>{
         console.log(err);
         res.status(500).send({status:"Error Generated in the Admin updated part", error: err.message});
@@ -167,7 +167,7 @@ router.delete('/post/delete/:id',(req,res)=>{
 router.route("/get/:id").get(async(req,res)=>{
     let adminId = req.params.id;
     const Admin = await admin.findById(adminId).then((Admin)=>{
-        res.status(200).send({status:"Admin fetched", Admin: Admin});
+        res.status(200).send({status:"Admin fetched"});
     }).catch((err)=>{
         console.log(err.message);
         res.status(500).send({status:"Error with search admin", error: err.message});

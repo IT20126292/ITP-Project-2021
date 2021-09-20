@@ -37,7 +37,7 @@ const AdminSchema = new schema({
 
 AdminSchema.pre('save', async function(next){
 
-    if(!this.isModified("pass")){
+    if(!this.isModified("Password")){
         next();
     }
     const salt = await bcrypt.genSalt(8);
