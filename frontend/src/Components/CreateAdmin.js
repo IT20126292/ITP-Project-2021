@@ -80,8 +80,9 @@ class CreateAdmin extends React.Component{
                     Password: '',
                     Password1: ''
                 })
-            }).catch(error=>{
-                alert(error.message);
+            }).catch(()=>{
+                toast.warning('Required to fill all fields',{position:toast.POSITION.TOP_CENTER})
+                // alert(error.message);
             });
         }else{
             toast.warning('Password Dismatch',{position:toast.POSITION.TOP_CENTER})
@@ -100,19 +101,19 @@ class CreateAdmin extends React.Component{
                 <br/>
                 <form>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="exampleInputId" placeholder="REGISTRATION NUMBER" value={this.state.adminID} onChange={this.setAdminID}/>
+                    <input type="text" class="form-control" id="exampleInputId" placeholder="REGISTRATION NUMBER" value={this.state.adminID} onChange={this.setAdminID} required/>
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="exampleInputusername" placeholder="USERNAME" value={this.state.username} onChange={this.setAdminUsername}/>
+                    <input type="text" class="form-control" id="exampleInputusername" placeholder="USERNAME" value={this.state.username} onChange={this.setAdminUsername} required/>
                 </div>
                 <div class="mb-3">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value={this.state.email} onChange={this.setAdminEmail}/>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value={this.state.email} onChange={this.setAdminEmail} required/>
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="NEW PASSWORD" value={this.state.Password} onChange={this.setAdminPwd}/>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="NEW PASSWORD" value={this.state.Password} onChange={this.setAdminPwd} required/>
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="CONFIRM PASSWORD" value={this.state.Password1} onChange={this.setAdminPwd1}/>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="CONFIRM PASSWORD" value={this.state.Password1} onChange={this.setAdminPwd1} required/>
                 </div>
                 <br/>
                 <div class="row">
